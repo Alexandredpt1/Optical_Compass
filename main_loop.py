@@ -10,8 +10,8 @@ from test_rotator import reach_angle, home
 import Talker_listener as tl
 import argparse
 
-parser = argparse.ArgumentParser(description="Description de votre programme.")
-parser.add_argument('--n', type=int, default=101, help='Un nombre entier.')
+parser = argparse.ArgumentParser(description="This Python script is designed to control a camera and a motor, coordinating their actions through socket communication. The script ensures that the camera takes pictures at specific angles by commanding the motor to move to those angles and then signaling the camera to capture the images. The script runs a secondary script in a separate terminal to handle image capture.")
+parser.add_argument('--n', type=int, default=101, help='An integer')
 
 args = parser.parse_args()
 
