@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
 import subprocess
+import os
 import sys
 import time
-sys.path.append(r'C:\Users\stagiaire_biorob\AppData\Local\Programs\Python\Python311\Lib\site-packages\ebus-python\samples')
+ebus_samples_path = os.path.expanduser(r'~\AppData\Local\Programs\Python\Python311\Lib\site-packages\ebus-python\samples')
+sys.path.append(ebus_samples_path)
 import lib.PvSampleUtils as psu
 sys.path.append(r'C:\Users\stagiaire_biorob\Documents\Stage_Polarisation_UV\Logiciels\control_moteur\elliptec-main\tests')
 from test_rotator import reach_angle, home
@@ -11,7 +13,7 @@ import Talker_listener as tl
 import argparse
 
 parser = argparse.ArgumentParser(description="This Python script is designed to control a camera and a motor, coordinating their actions through socket communication. The script ensures that the camera takes pictures at specific angles by commanding the motor to move to those angles and then signaling the camera to capture the images. The script runs a secondary script in a separate terminal to handle image capture.")
-parser.add_argument('--n', type=int, default=101, help='An integer')
+parser.add_argument('--n', type=int, default=100, help='An integer')
 
 args = parser.parse_args()
 
