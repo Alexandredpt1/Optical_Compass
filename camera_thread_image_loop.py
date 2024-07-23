@@ -1,16 +1,16 @@
 import os
 import sys
 import eBUS as eb
-sys.path.append(r'C:\Users\stagiaire_biorob\AppData\Local\Programs\Python\Python311\Lib\site-packages\ebus-python\samples')
+ebus_samples_path = os.path.expanduser(r'~\AppData\Local\Programs\Python\Python311\Lib\site-packages\ebus-python\samples')
+sys.path.append(ebus_samples_path)
 import lib.PvSampleUtils as psu
-sys.path.append(r'C:\Users\stagiaire_biorob\AppData\Local\Programs\Python\Python311\Lib\site-packages\ebus-python\samples\Acquire_image_loop.py')
-from Acquire_image_loop import connect_to_device, open_stream, configure_stream, configure_stream_buffers, process_pv_buffer, acquire_image
+from Acquire_image_loop import connect_to_device, open_stream, configure_stream, configure_stream_buffers, acquire_image
 import Talker_listener as tl
 from datetime import datetime
 import argparse
 
-parser = argparse.ArgumentParser(description="Description de votre programme.")
-parser.add_argument('--n', type=int, required=True, help='Un nombre entier.')
+parser = argparse.ArgumentParser(description="This Python script is designed to acquire and save images from a GigE Vision or USB3 Vision camera using the eBUS SDK, incorporating elements from the Python API scripts based on Python version 3.11 (available at https://www.jai.com/support-software/jai-software/). It integrates socket communication to coordinate with an external script and leverages OpenCV for image processing. The script accepts a command-line argument to specify the number of iterations for image acquisition.")
+parser.add_argument('--n', type=int, required=True, help='An integer')
 
 args = parser.parse_args()
 
@@ -22,13 +22,13 @@ now = datetime.now()
 # Format the date and time
 current_date = now.strftime("%d.%m.%Y")
 
-chemin = r'C:\Users\stagiaire_biorob\Documents\Stage_Polarisation_UV\Donnee'
+path = os.path.expanduser(r'~\Optical_Compass\Data')
 
-chemin += f'\{current_date}'
+path += f'\{current_date}'
 
 
 # Create the directory
-os.makedirs(chemin, exist_ok=True)
+os.makedirs(path, exist_ok=True)
 
 kb = psu.PvKb() #give access to the keyboard
 
@@ -62,7 +62,7 @@ if connection_ID:
             for j in range(1,number):
                 print("---------------", j, "---------------")
                 tl.talker_bloquant(PORT) # Give the information to the 1st script to continue 
-                acquire_image(device, stream, j, chemin) # Run a 3rd script to save the pictures 
+                acquire_image(device, stream, j, path) # Run a 3rd script to save the pictures 
                 print("ending")
             buffer_list.clear()
 

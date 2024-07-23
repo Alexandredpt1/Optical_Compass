@@ -8,6 +8,9 @@ This project is composed of the following codes :
 This Python script is designed to control a camera and a motor, coordinating their actions through socket communication. The script ensures that the camera takes pictures at specific angles by commanding the motor to move to those angles and then signaling the camera to capture the images. The script runs a secondary script in a separate terminal to handle image capture.
     * By default, the program will run for 100 iterations, but you can choose the number by adding --n your_number at the end of the command : py -3.11 main_loop.py --n your_number
 
+* motor_rotation \
+This Python script is designed to control and test an Elliptec rotator via a specified serial port. The functions are inspired from the tests functions of https://github.com/roesel/elliptec.git.
+
 * camera_thread_image_loop.py \
 This Python script is designed to acquire and save images from a GigE Vision or USB3 Vision camera using the eBUS SDK, incorporating elements from the Python API scripts based on Python version 3.11 (available at https://www.jai.com/support-software/jai-software/). It integrates socket communication to coordinate with an external script and leverages OpenCV for image processing. The script accepts a command-line argument to specify the number of iterations for image acquisition.
 
@@ -21,6 +24,8 @@ This Python script provides functions for socket communication between two scrip
 * Image_Processing.py \
 This Python script processes a series of polarization images taken at different angles to compute and visualize various polarization parameters such as Stokes parameters, Degree of Polarization (DoP), and Angle of Polarization (AoP). The script uses libraries like imageio, numpy, and matplotlib for image reading, data processing, and visualization.
 
+* Data folder \
+The folder that will contain all the images taken
 
 ## Getting Started
 

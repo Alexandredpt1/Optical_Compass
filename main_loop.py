@@ -7,8 +7,7 @@ import time
 ebus_samples_path = os.path.expanduser(r'~\AppData\Local\Programs\Python\Python311\Lib\site-packages\ebus-python\samples')
 sys.path.append(ebus_samples_path)
 import lib.PvSampleUtils as psu
-sys.path.append(r'C:\Users\stagiaire_biorob\Documents\Stage_Polarisation_UV\Logiciels\control_moteur\elliptec-main\tests')
-from test_rotator import reach_angle, home
+from motor_rotation import home, reach_angle
 import Talker_listener as tl
 import argparse
 
@@ -21,10 +20,10 @@ number = args.n + 1
 
 
 # Choose the script you want to run in a different terminal
-camera_thread_image_loop = r'C:\Users\stagiaire_biorob\Documents\Stage_Polarisation_UV\Logiciels\Moteur+Caméra\camera_thread_image_loop.py' # Will saves the pictures at the 4 angles
+camera_thread_image_loop = r'camera_thread_image_loop.py' # Will saves the pictures at the 4 angles
 
 # Give the path to python 3.11 to run the script in 3.11
-python_path = r'C:\Users\stagiaire_biorob\AppData\Local\Programs\Python\Python311\python.exe' 
+python_path = os.path.expanduser(r'~\AppData\Local\Programs\Python\Python311\python.exe') 
 
 # Run the chosen script
 subprocess.Popen(['start', 'cmd', '/k', python_path, camera_thread_image_loop, '--n', str(number)], shell=True)

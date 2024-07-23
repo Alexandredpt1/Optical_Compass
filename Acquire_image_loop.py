@@ -13,8 +13,9 @@ actions upon the buffer.
 import os
 import sys
 import eBUS as eb
+ebus_samples_path = os.path.expanduser(r'~\AppData\Local\Programs\Python\Python311\Lib\site-packages\ebus-python\samples')
+sys.path.append(ebus_samples_path)
 import lib.PvSampleUtils as psu
-sys.path.append(r'C:\Users\stagiaire_biorob\Documents\Stage_Polarisation_UV\Logiciels\Moteur+Caméra')
 from Talker_listener import listener_bloquant, talker_bloquant
 from datetime import datetime
 
