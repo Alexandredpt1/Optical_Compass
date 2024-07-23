@@ -45,6 +45,7 @@ for j in range(1,number):
     # Homing the motor
     home()
 
+
     # Wait confirmation that the camera is ready
     tl.listener_bloquant(PORT)
 
@@ -54,17 +55,12 @@ for j in range(1,number):
     # Change the port to avoid conflicts
     PORT += 1
 
-    for i in range(4):
-        print("avant le if:", i)    
+    for i in range(4):    
         if i >= 1 :
-            print("nombre boucle:", i)
             tl.listener_bloquant(PORT2) # Wait the information from the 2nd script to continue
-        print("Port Ouvert:", PORT)
         reach_angle(relatives_angles[i], theorical_angles) # Reach the angle
         print("enregistre l'image")
-        print("avant")
         tl.talker_bloquant(PORT) # Give the information to the 2nd script to save the picture
-        print("après")
         PORT += 1 # Change the port to avoid conflicts
 
         theorical_angles += 45 # Defines the relative motor position
