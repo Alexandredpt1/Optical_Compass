@@ -9,7 +9,7 @@ This Python script is designed to control a camera and a motor, coordinating the
     * By default, the program will run 100 iterations, but you can choose the number by adding --n your_number at the end of the command : py -3.11 main_loop.py --n your_number
 
 * motor_rotation \
-This Python script is designed to control and test an Elliptec rotator via a specified serial port. The functions are inspired from the tests functions of https://github.com/roesel/elliptec.git.
+This Python script is designed to control and test an Elliptec rotator via a specified serial port. The functions are inspired from the tests functions of https://github.com/roesel/elliptec.git. You need also to specify the number of the port. By default it is COM5 but it depends of the motor you use. To see wich port you will use, install the elliptec software (https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=ELL) and connect your device.
 
 * camera_thread_image_loop.py \
 This Python script is designed to acquire and save images from a GigE Vision or USB3 Vision camera using the eBUS SDK, incorporating elements from the Python API scripts based on Python version 3.11 (available at https://www.jai.com/support-software/jai-software/). It integrates socket communication to coordinate with an external script and leverages OpenCV for image processing. The script accepts a command-line argument to specify the number of iterations for image acquisition.
@@ -45,9 +45,12 @@ Install the libraries in the requirement.txt with the command pip install -r req
 
 ### Executing program
 
-Connect your ELL14 motor and your camera. If you want to change the parameters of the camera, use the JAI software. You can download eBUS SDK software for JAI here: https://www.jai.com/support-software/jai-software/.
+Connect your ELL14 motor and your camera. If you want to change the parameters of the camera, use the JAI software. You can download eBUS SDK software for JAI here: https://www.jai.com/support-software/jai-software/. There is also a software to control the ELL14 motor: https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=ELL
 
 When all is connected, you can run the main_loop.py script. It will automatically run for 100 iterations, so if you want to change the number, you can run this command : py -3.11 main_loop.py --n your_number.
+
+> [!CAUTION]
+> If you run the script on a code editor (like Visual Studio Code), make sure all the files are "trust" by the editor, you may encounter some troubles with path. To avoid these issues, run the script on a terminal.
 
 ### Image Processing
 To process the images, you need to import 4 images in the Image_Processing folder and run the Image_processing.py script. It will display the Degree of Polarization (DoP) and the Global and Local Angle of Polarization (AoP).

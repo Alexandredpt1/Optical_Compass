@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
-sys.path.append('elliptec-main\src')
+sys.path.append(r'elliptec-main\src')
 import elliptec
 
 # Test settings (adjust based on hardware)
