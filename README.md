@@ -53,20 +53,21 @@ When all is connected, you can run the main_loop.py script. It will automaticall
 To process the images, you need to import 4 images in the Image_Processing folder and run the Image_processing.py script. It will display the Degree of Polarization (DoP) and the Global and Local Angle of Polarization (AoP).
 
 ## Help
-Any advise for common problems or issues, see the documentation with the code or contact me
+Any advise for common problems or issues, see the documentation with the code or contact me.
 
 ## Author
 Alexandre Dupont
-email : minidupsalex@gmail.com
+
+email: minidupsalex@gmail.com
 
 ## Version History
 * 0.1
-    *Initial release
+    * Initial release
 
 ## Acknowledgments
 This works contains code taken from:
-    *https://github.com/roesel/elliptec
-    *https://www.jai.com/support-software/jai-software/
+    * https://github.com/roesel/elliptec
+    * https://www.jai.com/support-software/jai-software/
 
 
 
