@@ -6,7 +6,7 @@ This repository allows you to control the ell14 elliptec motor from thorlabs sim
 This project is composed of the following codes :
 * main_loop \
 This Python script is designed to control a camera and a motor, coordinating their actions through socket communication. The script ensures that the camera takes pictures at specific angles by commanding the motor to move to those angles and then signaling the camera to capture the images. The script runs a secondary script in a separate terminal to handle image capture.
-    * By default, the program will run for 100 iterations, but you can choose the number by adding --n your_number at the end of the command : py -3.11 main_loop.py --n your_number
+    * By default, the program will run 100 iterations, but you can choose the number by adding --n your_number at the end of the command : py -3.11 main_loop.py --n your_number
 
 * motor_rotation \
 This Python script is designed to control and test an Elliptec rotator via a specified serial port. The functions are inspired from the tests functions of https://github.com/roesel/elliptec.git.
@@ -56,7 +56,7 @@ To process the images, you need to import 4 images in the Image_Processing folde
 Any advise for common problems or issues, see the documentation with the code or contact me.
 
 ## Author
-Alexandre Dupont \
+Alexandre Dupont\
 email: minidupsalex@gmail.com
 
 ## Version History
@@ -64,8 +64,8 @@ email: minidupsalex@gmail.com
     * Initial release
 
 ## Acknowledgments
-This works contains code taken from: \n
-* https://github.com/roesel/elliptec \n
+This works contains code taken from:\
+* https://github.com/roesel/elliptec\
 * https://www.jai.com/support-software/jai-software/
 
 
