@@ -56,8 +56,7 @@ To process the images, you need to import 4 images in the Image_Processing folde
 Any advise for common problems or issues, see the documentation with the code or contact me.
 
 ## Author
-Alexandre Dupont
-
+Alexandre Dupont \
 email: minidupsalex@gmail.com
 
 ## Version History
@@ -65,9 +64,9 @@ email: minidupsalex@gmail.com
     * Initial release
 
 ## Acknowledgments
-This works contains code taken from:
-    * https://github.com/roesel/elliptec \
-    * https://www.jai.com/support-software/jai-software/ \
+This works contains code taken from:\
+* https://github.com/roesel/elliptec \
+* https://www.jai.com/support-software/jai-software/
 
 
 
