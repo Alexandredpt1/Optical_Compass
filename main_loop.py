@@ -22,7 +22,7 @@ number = args.n + 1
 # Choose the script you want to run in a different terminal
 camera_thread_image_loop = r'camera_thread_image_loop.py' # Will saves the pictures at the 4 angles
 
-# Give the path to python 3.11 to run the script in 3.11
+# Give the path to python 3.11 to run the script in 3.11 if you have multiple versions of python
 python_path = os.path.expanduser(r'~\AppData\Local\Programs\Python\Python311\python.exe') 
 
 # Run the chosen script
