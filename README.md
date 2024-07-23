@@ -25,7 +25,7 @@ This Python script provides functions for socket communication between two scrip
 This Python script processes a series of polarization images taken at different angles to compute and visualize various polarization parameters such as Degree of Polarization (DoP) and Angle of Polarization (AoP). The script uses libraries like imageio, numpy, and matplotlib for image reading, data processing, and visualization.
 
 * Data folder \
-The folder that will contain all the images taken
+The folder that will contain all the images taken. It will be created after the fisrt launch of the main_loop.py script.
 
 ## Getting Started
 

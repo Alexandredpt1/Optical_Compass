@@ -22,7 +22,7 @@ now = datetime.now()
 # Format the date and time
 current_date = now.strftime("%d.%m.%Y")
 
-path = os.path.expanduser(r'~\Optical_Compass\Data')
+path = 'Data'
 
 path += f'\{current_date}'
 
