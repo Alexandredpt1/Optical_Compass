@@ -22,14 +22,14 @@ The code was designed for image acquisition using GigE Vision or USB3 Vision dev
 This Python script provides functions for socket communication between two scripts using blocking and non-blocking listeners and talkers. It uses Python's built-in socket module to handle TCP/IP communication on a local machine (127.0.0.1).
 
 * Image_Processing.py \
-This Python script processes a series of polarization images taken at different angles to compute and visualize various polarization parameters such as Stokes parameters, Degree of Polarization (DoP), and Angle of Polarization (AoP). The script uses libraries like imageio, numpy, and matplotlib for image reading, data processing, and visualization.
+This Python script processes a series of polarization images taken at different angles to compute and visualize various polarization parameters such as Degree of Polarization (DoP) and Angle of Polarization (AoP). The script uses libraries like imageio, numpy, and matplotlib for image reading, data processing, and visualization.
 
 * Data folder \
 The folder that will contain all the images taken
 
 ## Getting Started
 
-Create a folder to install all repositories in it
+Download the code and  extract it in your workspace
 
 ### Installation
 
@@ -37,11 +37,36 @@ Install python 3.11
 
 Install the Python API based on Python version 3.11: https://www.jai.com/support-software/jai-software/ (control the JAI camera)
 
-Install the github repository: https://github.com/roesel/elliptec (controll the ELL14 motor).
+Install the github repository: https://github.com/roesel/elliptec (control the ELL14 motor).
 
 ### Requirements
 
 Install the libraries in the requirement.txt with the command pip install -r requirements.txt
+
+### Executing program
+
+Connect your ELL14 motor and your camera. If you want to change the parameters of the camera, use the JAI software. You can download eBUS SDK software for JAI here: https://www.jai.com/support-software/jai-software/.
+
+When all is connected, you can run the main_loop.py script. It will automatically run for 100 iterations, so if you want to change the number, you can run this command : py -3.11 main_loop.py --n your_number.
+
+### Image Processing
+To process the images, you need to import 4 images in the Image_Processing folder and run the Image_processing.py script. It will display the Degree of Polarization (DoP) and the Global and Local Angle of Polarization (AoP).
+
+## Help
+Any advise for common problems or issues, see the documentation with the code or contact me
+
+## Author
+Alexandre Dupont
+email : minidupsalex@gmail.com
+
+## Version History
+* 0.1
+    *Initial release
+
+## Acknowledgments
+This works contains code taken from:
+    *https://github.com/roesel/elliptec
+    *https://www.jai.com/support-software/jai-software/
 
 
 
