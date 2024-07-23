@@ -64,8 +64,8 @@ email: minidupsalex@gmail.com
     * Initial release
 
 ## Acknowledgments
-This works contains code taken from:\
-* https://github.com/roesel/elliptec \
+This works contains code taken from: \n
+* https://github.com/roesel/elliptec \n
 * https://www.jai.com/support-software/jai-software/
 
 
