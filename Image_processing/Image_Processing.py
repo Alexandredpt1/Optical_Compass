@@ -66,8 +66,6 @@ aopl = 1/2*np.angle(Z_local)
 
 aopl_deg = aopl * 180/np.pi
 
-new =0.5*(1- np.cos(2*aopl))
-
 # Save matrices to CSV files
 #np.savetxt("dop.csv", dop, delimiter=";")
 #np.savetxt("aopg.csv", aopg, delimiter=";")
@@ -75,7 +73,7 @@ new =0.5*(1- np.cos(2*aopl))
 
 
 # Plotting the results
-fig, axs = plt.subplots(4, 1, figsize=(10, 10))
+fig, axs = plt.subplots(3, 1, figsize=(10, 10))
 
 # Plot Local AoP
 cax1 = axs[0].imshow(aopl_deg, cmap='hsv', vmin=-90, vmax=90)
@@ -91,10 +89,5 @@ axs[1].set_title('Global Angle of Polarization (AoPG)')
 cax2=axs[2].imshow(dop, cmap='rainbow',vmin=0,vmax=1)
 axs[2].set_title('DOP')
 fig.colorbar(cax2, ax=axs[2])
-
-# Plot DoP
-cax2=axs[3].imshow(new, cmap='gray',vmin=0,vmax=1)
-axs[3].set_title('new')
-fig.colorbar(cax2, ax=axs[3])
 
 plt.show()
