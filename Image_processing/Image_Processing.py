@@ -26,11 +26,13 @@ S2 = I45 - I135 # Vector of polarization in 45-135
 
 
 Z_global = (S1 + 1j * S2)/S0 # Global Stokes parameters
-Z_global = Z_global * np.exp(2j * 19.8*np.pi/180) # Global Stokes parameters calibrated
+Z_global = Z_global * np.exp(2j * 120.6*np.pi/180) # Global Stokes parameters calibrated
 
 dop = np.abs(Z_global) # Degree of Polarization
 
 aopg = 1/2*np.angle(Z_global) # Global Angle of Polarization
+
+aopg_deg = aopg * 180/np.pi
 
 
 # Pixel coordinates
@@ -73,21 +75,21 @@ aopl_deg = aopl * 180/np.pi
 
 
 # Plotting the results
-fig, axs = plt.subplots(3, 1, figsize=(10, 10))
+fig, axs = plt.subplots(2, 2, figsize=(10, 10))
 
 # Plot Local AoP
-cax1 = axs[0].imshow(aopl_deg, cmap='hsv', vmin=-90, vmax=90)
-fig.colorbar(cax1, ax=axs[0])
-axs[0].set_title('Local Degree of Polarization (AoPL)')
+cax1 = axs[0,0].imshow(aopl_deg, cmap='hsv', vmin=-90, vmax=90)
+fig.colorbar(cax1, ax=axs[0,0])
+axs[0,0].set_title('Local Degree of Polarization (AoPL)')
 
 # Plot Global AoP
-cax2 = axs[1].imshow(aopg, cmap='hsv', vmin=-np.pi/2, vmax=np.pi/2)
-fig.colorbar(cax2, ax=axs[1])
-axs[1].set_title('Global Angle of Polarization (AoPG)')
+cax2 = axs[1,0].imshow(aopg, cmap='hsv', vmin=-np.pi/2, vmax=np.pi/2)
+fig.colorbar(cax2, ax=axs[1,0])
+axs[1,0].set_title('Global Angle of Polarization (AoPG)')
 
 # Plot DoP
-cax2=axs[2].imshow(dop, cmap='rainbow',vmin=0,vmax=1)
-axs[2].set_title('DOP')
-fig.colorbar(cax2, ax=axs[2])
+cax2=axs[0,1].imshow(dop, cmap='rainbow',vmin=0,vmax=0.2)
+axs[0,1].set_title('DOP')
+fig.colorbar(cax2, ax=axs[0,1])
 
 plt.show()
